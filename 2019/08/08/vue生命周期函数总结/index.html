@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2019/8 | 绝尘Ov3r°的博客</title>
+  <title>&#39;vue生命周期函数总结&#39; | 绝尘Ov3r°的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="绝尘Ov3r°的博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="绝尘Ov3r°的博客">
-<meta property="og:url" content="http://yoursite.com/archives/2019/08/index.html">
+  <meta name="description" content="#VUE生命周期函数1.介绍每个vue组件实例在被创建时都要经过一系列的初始化过程，例如：需要设置数据监听、编译模板、将实例挂载到 DOM并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做 生命周期钩子 的函数，这给了用户在不同阶段添加自己的代码的机会。（ps：生命周期钩子就是生命周期函数，生命周期函数在 mounted 生命周期中执行） 2.生命周期函数&amp;ensp;&amp;ensp;&amp;e">
+<meta name="keywords" content="绝尘Ov3r°的博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="&#39;vue生命周期函数总结&#39;">
+<meta property="og:url" content="http://yoursite.com/2019/08/08/vue生命周期函数总结/index.html">
 <meta property="og:site_name" content="绝尘Ov3r°的博客">
+<meta property="og:description" content="#VUE生命周期函数1.介绍每个vue组件实例在被创建时都要经过一系列的初始化过程，例如：需要设置数据监听、编译模板、将实例挂载到 DOM并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做 生命周期钩子 的函数，这给了用户在不同阶段添加自己的代码的机会。（ps：生命周期钩子就是生命周期函数，生命周期函数在 mounted 生命周期中执行） 2.生命周期函数&amp;ensp;&amp;ensp;&amp;e">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2019-08-08T03:47:47.230Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="绝尘Ov3r°的博客">
+<meta name="twitter:title" content="&#39;vue生命周期函数总结&#39;">
+<meta name="twitter:description" content="#VUE生命周期函数1.介绍每个vue组件实例在被创建时都要经过一系列的初始化过程，例如：需要设置数据监听、编译模板、将实例挂载到 DOM并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做 生命周期钩子 的函数，这给了用户在不同阶段添加自己的代码的机会。（ps：生命周期钩子就是生命周期函数，生命周期函数在 mounted 生命周期中执行） 2.生命周期函数&amp;ensp;&amp;ensp;&amp;e">
   
     <link rel="alternative" href="/atom.xml" title="绝尘Ov3r°的博客" type="application/atom+xml">
   
@@ -155,76 +159,207 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-vue生命周期函数总结" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      &#39;vue生命周期函数总结&#39;
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/08/vue生命周期函数总结/" class="archive-article-date">
+
+        
+        <a href="/2019/08/08/vue生命周期函数总结/" class="archive-article-date">
   	<time datetime="2019-08-08T03:46:56.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-08</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/08/vue生命周期函数总结/">&#39;vue生命周期函数总结&#39;</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#VUE生命周期函数<br><strong>1.介绍</strong><br><br><br>每个vue组件实例在被创建时都要经过一系列的初始化过程，例如：需要设置数据监听、编译模板、将实例挂载到 DOM<br>并在数据变化时更新 DOM 等。同时在这个过程中也会运行一些叫做 生命周期钩子 的函数，这给了用户在不同阶段添加自己的代码的机会。<br>（ps：生命周期钩子就是生命周期函数，生命周期函数在 mounted 生命周期中执行）<br></p>
+<p><strong>2.生命周期函数</strong><br><br><br>&ensp;&ensp;&ensp;生命周期函数有如下几个：<br><br><br>&ensp;&ensp;&ensp;beforeCreate &ensp;&ensp;&ensp;实例创建之前<br><br>&ensp;&ensp;&ensp;created &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;实例创建之后<br><br>&ensp;&ensp;&ensp;beforeMount &ensp;&ensp;&ensp;模板编译之前 <br><br>&ensp;&ensp;&ensp;mounted &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;模板编译完成<br><br>&ensp;&ensp;&ensp;beforeUpdate &ensp;&ensp;数据更新之前 <br><br>&ensp;&ensp;&ensp;updated  &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;数据更新完成<br><br>&ensp;&ensp;&ensp;beforeDestroy  &ensp;&ensp;实例销毁之前<br><br>&ensp;&ensp;&ensp;destroyed &ensp;&ensp;&ensp;&ensp;&ensp;&ensp;实例销毁完成<br></p>
+<p>用法具体如下：<br></p>
+<pre><code>&lt;template&gt;
+    &lt;div id=&quot;app1&quot;&gt;
+        生命周期函数演示 {{msg}} &lt;button @click=&quot;ChangeMsg&quot;&gt;改变MSG&lt;/button&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
 
-        <div class="article-info info-on-right">
-          
-          
+&lt;script&gt;
+    export default {
+        name: &quot;life&quot;,
+        data(){
+            return{
+                msg:&apos;我是一个生命周期函数&apos;
+            }
+        },
+        methods:{
+            ChangeMsg(){
+                        this.msg=&apos;我是改变后的数据&apos;
+            }
+        },
+        beforeCreate(){
+                  console.log(&apos;实例创建之前&apos;)
+        },
+        created(){
+            console.log(&apos;实例创建之后&apos;)
+        },
+        beforeMount(){
 
+            console.log(&apos;模板编译之前&apos;)
+        },
+        mounted() {
+            console.log(&apos;模板编译完成&apos;)
+        },
+        beforeUpdate() {
+            console.log(&apos;数据更新之前&apos;)
+        },
+        updated() {
+            console.log(&apos;数据更新完成&apos;)
+        },
+        beforeDestroy() {
+            console.log(&apos;实例销毁之前&apos;)
+        },
+        destroyed() {
+            console.log(&apos;实例销毁完成&apos;)
+        }
+    }
+&lt;/script&gt;
+
+&lt;style scoped&gt;
+
+&lt;/style&gt;</code></pre>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i><i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/08/08/vue生命周期函数总结/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/08/01/我的第一篇博客/" class="archive-article-date">
-  	<time datetime="2019-08-01T12:50:30.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-01</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2019/08/01/我的第一篇博客/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">&#39;我的第一篇博客&#39;</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/08/01/我的第一篇博客/">&#39;我的第一篇博客&#39;</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
+
+  
 
 
           </div>
@@ -247,8 +382,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
