@@ -157,6 +157,76 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-使用vue-router实现页面跳转" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/08/26/使用vue-router实现页面跳转/">&#39;使用vue-router实现页面跳转&#39;</a>
+    </h1>
+  
+
+        
+        <a href="/2019/08/26/使用vue-router实现页面跳转/" class="archive-article-date">
+  	<time datetime="2019-08-26T10:05:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-26</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>1.安装vue-router</strong><br><br>&ensp;<figure class="highlight plain"><figcaption><span>install vue-router --save```<br></span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">**2.使用vue-router**&lt;br/&gt;</span><br><span class="line">&amp;ensp;&amp;ensp;(1)在main.js中：&lt;br/&gt;</span><br><span class="line">```vue</span><br><span class="line">import Vue from &apos;vue&apos;</span><br><span class="line">import App from &apos;./App.vue&apos;</span><br><span class="line">import VueRouter from &apos;vue-router&apos;;</span><br><span class="line">import testRouter from &quot;@/components/testRouter&quot;;   //引入组件</span><br><span class="line">import goto from &quot;@/components/goto&quot;;</span><br><span class="line">Vue.use(VueRouter);</span><br><span class="line">const routes=[            //定义路由</span><br><span class="line">    &#123;</span><br><span class="line">        path: &apos;/&apos;,   //路由名（跳转路径）    </span><br><span class="line">        component:goto</span><br><span class="line">    &#125;,</span><br><span class="line">    &#123;</span><br><span class="line">      path:&apos;/router&apos;,</span><br><span class="line">      component:testRouter,</span><br><span class="line">      name:&apos;router&apos;</span><br><span class="line">    &#125;</span><br><span class="line">  ];</span><br><span class="line">const router=new VueRouter(&#123;     //创建路由</span><br><span class="line">  routes,</span><br><span class="line">  mode:&apos;history&apos;      //路由模式  history：历史模式 url不带#号   hash(默认):哈希模式 路由url带#号</span><br><span class="line">&#125;);</span><br><span class="line">new Vue(&#123;</span><br><span class="line">  router,</span><br><span class="line">  render: h =&gt; h(App),</span><br><span class="line">&#125;).$mount(&apos;#app&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>&ensp;&ensp;(2)在根组件中使用router-view:<br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div id=&quot;app&quot;&gt;</span><br><span class="line">      &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&ensp;&ensp;(3)路由跳转有两种方式：<br><br>&ensp;&ensp;&ensp;&ensp;①使用router-link:<br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;h1&gt;&lt;/h1&gt;</span><br><span class="line">  &lt;p&gt;</span><br><span class="line">    &lt;!-- 使用 router-link 组件来导航. --&gt;</span><br><span class="line">    &lt;!-- 通过传入 `to` 属性指定链接. --&gt;</span><br><span class="line">    &lt;!-- &lt;router-link&gt; 默认会被渲染成一个 `&lt;a&gt;` 标签 --&gt;</span><br><span class="line">    &lt;router-link to=&quot;/&quot;&gt;Go to goto&lt;/router-link&gt;</span><br><span class="line">    &lt;router-link to=&quot;/bar&quot;&gt;Go to testRouter&lt;/router-link&gt;</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">  &lt;!-- 路由出口 --&gt;</span><br><span class="line">  &lt;!-- 路由匹配到的组件将渲染在这里 写到其他组件均可--&gt;</span><br><span class="line">  &lt;router-view&gt;&lt;/router-view&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>&ensp;&ensp;&ensp;&ensp;②使用this.$router.push:<br></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div id=&quot;goto&quot;&gt;</span><br><span class="line">        &lt;button @click=&quot;gotoTest&quot;&gt;跳转&lt;/button&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    export default &#123;</span><br><span class="line">        name: &quot;goto&quot;,</span><br><span class="line">        methods:&#123;</span><br><span class="line">            gotoTest()&#123;</span><br><span class="line">                this.$router.push(&apos;/&apos;)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2019/08/26/使用vue-router实现页面跳转/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="&#39;element-自定义表单验证" class="article article-type-&#39;element  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
